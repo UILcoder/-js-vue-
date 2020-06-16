@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      let student = {
+        name: "wxy",
+        age: 21,
+        number: 01,
+        lesson: [{
+            name: "javascript",
+            score: 100
+          },
+          {
+            name: "java",
+            score: 90
+          }
+        ]
+      }
+      let studentCopy = copy(student);
+
+      function copy(obj) {
+      	let result={};
+        for(let key in obj) {
+          result[key] = obj[key];
+        }
+        return result;
+      }
+      student.lesson.push({
+        name: "c",
+        score: 90
+      });
+      console.log(studentCopy);
+      console.log(student);
+    </script>
+  </body>
+
+</html>
