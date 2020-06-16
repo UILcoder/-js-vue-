@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      let student = {
+        name: "wxy",
+        age: 21,
+        number: 01,
+        lesson: [{
+            name: "javascript",
+            score: 100
+          },
+          {
+            name: "java",
+            score: 90
+          }
+        ]
+      }
+      let studentCopy = copy(student);
+
+      function copy(obj) {
+        let result = (obj instanceof Array) ? [] : {};
+        for(let key in obj) {
+          result[key] = (typeof obj[key] == "object") ? copy(obj[key]) : obj[key];
+        }
+        return result;
+      }
+      student.lesson.push({name:"c",score:90});
+      console.log(studentCopy);//没有拷入student增加的值
+      console.log(student);
+    </script>
+  </body>
+
+</html>
