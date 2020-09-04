@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    #goods{
+      display: flex;
+      flex: 1; 
+      width: 80%;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .image{
+      width: 200px;
+      height: 200px;
+    }
+    .clothes{
+      width: 230px;
+      border: solid black;
+      margin: 5px;
+      position: relative;
+    }
+    .title{
+      font-size: 10px;
+      display: inline;
+      font-weight: bold;
+    }
+    input{
+      width: 30px;
+      text-align: center;
+      
+    }
+    span{
+      margin-bottom: 10px;
+    }
+    .count{
+      float: right;
+      left: 20px;
+    }
+    .container{
+      margin: 10px;
+    }
+    #cart{
+      margin-top: 30px;
+      background-color: red;
+      width: 200px;
+      height: 50px;
+      position: relative;
+      float:right;
+    }
+  </style>
+
+</head>
+
+<body>
+ 
+  <div id="goods">
+    <div class="clothes"> 
+      <div class="container">
+        <img class="image" src= "https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg"/>
+        <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+        <p class="position"></p>
+        <span class="price">￥79.00</span>
+        <span class="count">
+        <button class="increase">+</button>
+        <input type="text" value="1">
+        <button class="decrease">-</button>
+        </span>
+      </div>
+    </div>
+      <div class="clothes">
+        <div class="container">
+        <img class="image"
+          src="https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg" />
+        <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+        <p class="position"></p>
+        <span class="price">￥79.00</span>
+        <span class="count">
+          <button class="increase">+</button>
+          <input type="text" value="1">
+          <button class="decrease">-</button>
+        </span>
+      </div>
+    </div>
+      <div class="clothes">
+        <div class="container">
+        <img class="image"
+          src="https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg" />
+        <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+        <p class="position"></p>
+        <span class="price">￥79.00</span>
+        <span class="count">
+          <button class="increase">+</button>
+          <input type="text" value="1">
+          <button class="decrease">-</button>
+        </span>
+        </div>
+      </div>
+        <div class="clothes">
+          <div class="container">
+          <img class="image"
+            src="https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg" />
+          <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+          <p class="position"></p>
+          <span class="price">￥79.00</span>
+          <span class="count">
+            <button class="increase">+</button>
+            <input type="text" value="1">
+            <button class="decrease">-</button>
+          </span>
+        </div>
+      </div>
+      <div class="clothes">
+        <div class="container">
+          <img class="image"
+            src="https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg" />
+          <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+          <p class="position"></p>
+          <span class="price">￥79.00</span>
+          <span class="count">
+            <button class="increase">+</button>
+            <input type="text" value="1">
+            <button class="decrease">-</button>
+          </span>
+        </div>
+      </div>
+      <div class="clothes">
+        <div class="container">
+          <img class="image"
+            src="https://s5.mogucdn.com/mlcdn/c45406/200626_8e9de6ad2g360di1b83ch704da23j_5000x7500.jpg_468x468.jpg" />
+          <p class="title">荷叶边设计感露肩雪纺衫女夏季2020新款韩版宽松百搭短袖上衣</p>
+          <p class="position"></p>
+          <span class="price">￥79.00</span>
+          <span class="count">
+            <button class="increase">+</button>
+            <input type="text" value="1">
+            <button class="decrease">-</button>
+          </span>
+        </div>
+      </div>
+  </div>
+  <button id="cart">加入购物车</button>
+
+  <script>
+    let goods=document.getElementById('goods');
+    let clothes=document.getElementsByClassName('clothes');
+    let positon=document.getElementsByClassName('position');
+    let increase=document.getElementsByClassName('increase');
+    let decrease=document.getElementsByClassName('decrease');
+    let input=document.getElementsByTagName('input');
+    let cart=document.getElementById('cart');
+    let a="";
+    for(let i=0;i<positon.length;i++){
+      positon[i].innerHTML='No.'+(i+1);
+      let x=1;
+      increase[i].onclick = function () {       
+        x++;
+        input[i].value = x;
+      }
+      decrease[i].onclick=function(){
+        x--;
+        input[i].value=x;
+        if(x<1){
+        let r = confirm("是否删除当前商品");
+        if (r == true) {
+          goods.removeChild(clothes[i]);
+        } else {
+          input[i].value=1;
+        }
+
+      }
+      }
+      
+    }
+     
+      cart.onclick=function(){
+     for(let i=0;i<positon.length;i++)
+      a+=positon[i].innerHTML+':'+input[i].value+' ';
+      let b=confirm(a);
+      if(b==true){
+        window.location.assign('https://www.baidu.com/')
+      }
+      else{
+        a="";
+      }
+      }
+  </script>
+</body>
+
+</html>

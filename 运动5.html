@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #cube {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: relative;
+
+    }
+
+    button {
+      background-color: yellowgreen;
+      width: 50px;
+      height: 30px;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="cube"></div>
+  <button id="btn">开始</button>
+  <script>
+    let cube = document.getElementById('cube');
+    document.getElementById("btn").onclick = function () {
+      let speed=50,i=0;
+      let timer = setInterval(function () {
+        if(cube.offsetLeft===500){
+          speed*=-1;
+          i++
+        }
+        if(cube.offsetLeft===0&&i>0){
+          speed*=-1;
+        }
+        cube.style.left = cube.offsetLeft + speed + 'px';
+      }, 100)
+    }
+  </script>
+</body>
+
+</html>

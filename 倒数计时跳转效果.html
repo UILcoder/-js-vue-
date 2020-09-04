@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+  <p id='text'></p>
+  <script>
+    let x=5;
+    setInterval(function(){
+      document.getElementById('text').innerHTML='注册成功！'+x+'秒后跳转到新页面';
+      x--;
+      if(x===1){
+        window.location.assign('https://www.baidu.com/')
+      }
+    },1000)
+     
+  </script>
+</body>
+
+</html>

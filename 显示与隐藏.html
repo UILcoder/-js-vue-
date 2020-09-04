@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <button id="btn">点我</button>
+  <script>
+    let i = 0;
+    document.getElementById('btn').onclick =function () {
+      i++;
+      if (i % 2 != 0) {
+        document.getElementById('box').style.visibility = 'hidden';
+      }
+      else {
+        document.getElementById('box').style.visibility = 'visible';
+      }
+
+    }
+  </script>
+</body>
+
+</html>

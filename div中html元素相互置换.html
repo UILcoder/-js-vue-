@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    #box1{
+      width: 200px;
+      height: 200px;
+      border: solid red;
+      }
+    #box2{
+      width: 200px;
+      height: 200px;
+      border: solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1"><p id="text1">你好中国</p></div>
+  <button id="btn">交换</button>
+  <div id="box2"><p id="text2"></p></div>
+  <script>
+    let text1= document.getElementById('text1');
+    let text2= document.getElementById('text2');
+    let i=0;
+    document.getElementById('btn').onclick=function(){
+      text2.innerHTML=text1.innerHTML;
+      i++;
+      if(i%2!=0){
+        text1.style.visibility='hidden'
+        text2.style.visibility='visible'
+      }
+      else{
+        text1.style.visibility = 'visible'
+         text2.style.visibility='hidden'
+      }
+      
+    }
+
+  </script>
+</body>
+
+</html>
